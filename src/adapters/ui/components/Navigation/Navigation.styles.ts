@@ -1,5 +1,7 @@
 import { styled } from 'styled-components';
 
+import { device } from '../styles/breakpoints';
+
 export const NavigationContainer = styled.div`
     width: 100vw;
     height: 84px;
@@ -9,6 +11,10 @@ export const NavigationContainer = styled.div`
     box-sizing: border-box;
     background-color: #000000;
     color: #ffffff;
+
+    @media ${device.sm} {
+        padding: 16px;
+    }
 `;
 
 export const NavigationLogo = styled.img`
