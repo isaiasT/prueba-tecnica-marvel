@@ -1,6 +1,6 @@
 import { usePageContext } from 'vike-react/usePageContext';
 
-export const ErrorPage = () => {
+const ErrorPage = () => {
     const pageContext = usePageContext();
 
     let msg, title;

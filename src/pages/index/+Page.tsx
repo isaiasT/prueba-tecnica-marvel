@@ -1,7 +1,9 @@
+import SearchBar from '../../adapters/ui/components/SearchBar/SearchBar';
+
 function Page() {
     return (
         <>
-            <h1>Characters List</h1>
+            <SearchBar />
         </>
     );
 }
