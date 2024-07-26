@@ -1,17 +1,19 @@
-export { Layout };
-
 import React from 'react';
-import './Layout.css';
 
 import Navigation from '../adapters/ui/components/Navigation/Navigation';
-import GlobalStyle from '../adapters/ui/styles/GlobalStyle';
+import './Layout.css';
 
-function Layout({ children }) {
+interface LayoutProps {
+    children: React.ReactNode;
+}
+
+function Layout({ children }: LayoutProps) {
     return (
         <React.StrictMode>
-            <GlobalStyle />
             <Navigation />
             {children}
         </React.StrictMode>
     );
 }
+
+export { Layout };
