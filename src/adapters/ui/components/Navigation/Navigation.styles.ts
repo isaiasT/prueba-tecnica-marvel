@@ -8,7 +8,7 @@ export const NavigationContainer = styled.div`
     padding: 16px 48px 16px 48px;
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
+    align-items: center;
     background-color: #000000;
     color: #ffffff;
 
@@ -17,13 +17,19 @@ export const NavigationContainer = styled.div`
     }
 `;
 
+export const NavigationLogoWrapper = styled.a`
+    height: 100%;
+    display: flex;
+    align-items: center;
+`;
+
 export const NavigationLogo = styled.img`
     width: 130px;
 `;
 
 export const NavigationFavorites = styled.a`
     width: auto;
-    height: 37.68px;
+    height: 38px;
     padding: 8px;
     display: flex;
     align-items: center;
