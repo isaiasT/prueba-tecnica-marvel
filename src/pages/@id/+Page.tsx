@@ -1,4 +1,4 @@
-function Page() {
+function CharacterDetailsPage() {
     return (
         <>
             <h1>Character details</h1>
@@ -6,4 +6,4 @@ function Page() {
     );
 }
 
-export default Page;
+export default CharacterDetailsPage;

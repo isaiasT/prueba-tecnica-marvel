@@ -1,6 +1,6 @@
 import SearchBar from '../../adapters/ui/components/SearchBar/SearchBar';
 
-function Page() {
+function CharactersPage() {
     return (
         <>
             <SearchBar />
@@ -8,4 +8,4 @@ function Page() {
     );
 }
 
-export default Page;
+export default CharactersPage;

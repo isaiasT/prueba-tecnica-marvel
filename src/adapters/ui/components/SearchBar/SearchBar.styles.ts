@@ -1,5 +1,7 @@
 import { styled } from 'styled-components';
 
+import { device } from '../styles/breakpoints';
+
 export const SearchBarContainer = styled.div`
     width: 100vw;
     height: 77px;
@@ -8,6 +10,10 @@ export const SearchBarContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    @media ${device.sm} {
+        padding: 12px 16px 12px 16px;
+    }
 `;
 
 export const SearchBarInputContainer = styled.div`
