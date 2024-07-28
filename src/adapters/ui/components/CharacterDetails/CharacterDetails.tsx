@@ -24,13 +24,16 @@ function CharacterDetails({ name, description, isFavorite, photoSrc }: Character
         <CharacterDetailsContainer>
             <CharacterDetailsContainerCentered>
                 <CharacterDetailsPhotoWrapper>
-                    <CharacterDetailsPhoto src={photoSrc} />
+                    <CharacterDetailsPhoto src={photoSrc} alt={name} />
                 </CharacterDetailsPhotoWrapper>
                 <CharacterDetailsWrapper>
                     <CharacterDetailsWrapper2>
                         <CharacterDetailsNameContainer>
                             <CharacterDetailsName>{name}</CharacterDetailsName>
-                            <CharacterDetailsFavoriteIcon src={isFavorite ? '/heart-filled.svg' : '/heart-empty.svg'} />
+                            <CharacterDetailsFavoriteIcon
+                                src={isFavorite ? '/heart-filled.svg' : '/heart-empty.svg'}
+                                alt="Favorite icon"
+                            />
                         </CharacterDetailsNameContainer>
                         <CharacterDetailsDescription>{description}</CharacterDetailsDescription>
                     </CharacterDetailsWrapper2>

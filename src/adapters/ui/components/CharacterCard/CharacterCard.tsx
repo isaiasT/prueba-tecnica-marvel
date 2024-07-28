@@ -30,7 +30,7 @@ function CharacterCard({ name, isFavorite, photoSrc }: CharacterCardProps) {
     return (
         <CharacterCardContainer href="/1">
             <CharacterCardPhotoWrapper>
-                <CharacterCardPhoto src={photoSrc} />
+                <CharacterCardPhoto src={photoSrc} alt={name} />
             </CharacterCardPhotoWrapper>
             <CharacterCardInfo>
                 <CharacterCardInfoName>{name}</CharacterCardInfoName>

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { device } from '../../adapters/ui/components/styles/breakpoints';
+import { device } from '../../adapters/ui/styles/breakpoints';
 
 export const FavoritesPageTitleContainer = styled.div`
     padding: 48px 0px 48px 0px;
