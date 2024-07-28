@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 export const ComicContainer = styled.div`
     width: 179px;
-    height: 341px;
+    min-height: 341px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -21,7 +21,7 @@ export const ComicPhoto = styled.img`
 `;
 
 export const ComicInfoContainer = styled.div`
-    height: 60px;
+    min-height: 60px;
     display: flex;
     flex-direction: column;
     gap: 8px;

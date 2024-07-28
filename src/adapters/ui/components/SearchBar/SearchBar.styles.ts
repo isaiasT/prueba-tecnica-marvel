@@ -41,8 +41,7 @@ export const SearchBarInputInput = styled.input`
     outline: none;
     color: #000000;
     font-size: 16px;
-
-    ::placeholder {
+    spell ::placeholder {
         color: #aaaaaa;
     }
 `;
