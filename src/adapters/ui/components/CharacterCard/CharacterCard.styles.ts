@@ -76,6 +76,7 @@ export const CharacterCardInfoName = styled.div`
     display: flex;
     align-items: center;
     padding-left: 16px;
+    font-size: 14px;
 `;
 
 export const CharacterCardInfoFavoriteWrapper = styled.div`
