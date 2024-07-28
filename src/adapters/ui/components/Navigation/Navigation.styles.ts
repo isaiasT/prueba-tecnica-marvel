@@ -39,6 +39,6 @@ export const NavigationFavorites = styled.a`
     color: #ffffff;
 `;
 
-export const NavigationFavoritesLogo = styled.img`
+export const NavigationFavoritesIcon = styled.img`
     width: 24px;
 `;

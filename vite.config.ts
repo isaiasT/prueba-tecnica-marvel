@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => {
 
     return {
         plugins: [react(), vike()],
+        vike: {
+            noExternal: ['styled-components', '@emotion/*'],
+        },
         build: {
             minify: isDevelopment ? false : 'terser',
             rollupOptions: {

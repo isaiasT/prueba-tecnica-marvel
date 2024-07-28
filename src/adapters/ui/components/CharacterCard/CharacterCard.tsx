@@ -15,10 +15,10 @@ import {
 interface CharacterCardProps {
     name: string;
     isFavorite: boolean;
-    imageSrc: string;
+    photoSrc: string;
 }
 
-function CharacterCard({ name, isFavorite, imageSrc }: CharacterCardProps) {
+function CharacterCard({ name, isFavorite, photoSrc }: CharacterCardProps) {
     const [characterIsFavorite, setCharacterIsFavorite] = useState(isFavorite);
 
     const handleFavoriteClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -30,7 +30,7 @@ function CharacterCard({ name, isFavorite, imageSrc }: CharacterCardProps) {
     return (
         <CharacterCardContainer href="/1">
             <CharacterCardPhotoWrapper>
-                <CharacterCardPhoto src={imageSrc} />
+                <CharacterCardPhoto src={photoSrc} />
             </CharacterCardPhotoWrapper>
             <CharacterCardInfo>
                 <CharacterCardInfoName>{name}</CharacterCardInfoName>
