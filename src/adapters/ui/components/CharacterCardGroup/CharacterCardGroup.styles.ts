@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { device } from '../../styles/breakpoints';
+import { device } from '../../global-styles/breakpoints';
 
 export const CharacterCardGroupContainer = styled.div`
     width: 100%;

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { device } from '../../adapters/ui/styles/breakpoints';
+import { device } from '../../adapters/ui/global-styles/breakpoints';
 
 export const CharacterDetailsPageComicsContainer = styled.div`
     width: 100%;
