@@ -16,6 +16,8 @@ export const ComicPhotoWrapper = styled.div`
 export const ComicPhoto = styled.img`
     width: 100%;
     height: 100%;
+    -webkit-user-drag: none;
+    user-select: none;
 `;
 
 export const ComicInfoContainer = styled.div`
@@ -23,6 +25,7 @@ export const ComicInfoContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
+    user-select: none;
 `;
 
 export const ComicName = styled.div`

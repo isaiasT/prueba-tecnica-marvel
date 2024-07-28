@@ -7,6 +7,7 @@ export const ComicGroupWrapper = styled.div`
     height: 369px;
     overflow-x: auto;
     position: relative;
+    cursor: grab;
 
     &::-webkit-scrollbar {
         height: 4px;
