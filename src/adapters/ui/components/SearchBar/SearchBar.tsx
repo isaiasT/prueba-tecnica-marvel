@@ -12,7 +12,7 @@ function SearchBar() {
         <SearchBarContainer>
             <SearchBarInputContainer>
                 <SearchBarInputContainer2>
-                    <SearchBarInputMagnifyingGlassLogo src="/magnifying-glass.svg" />
+                    <SearchBarInputMagnifyingGlassLogo src="/magnifying-glass.svg" alt="Magnifying glass icon" />
                     <SearchBarInputInput type="text" placeholder="SEARCH A CHARACTER..." />
                 </SearchBarInputContainer2>
             </SearchBarInputContainer>

@@ -1,5 +1,11 @@
 import CharacterDetails from '../../adapters/ui/components/CharacterDetails/CharacterDetails';
-import { CharacterDetailsPageComicsContainer, CharacterDetailsPageComicsTitle } from './Page.styles';
+import Comic from '../../adapters/ui/components/Comic/Comic';
+import ComicGroup from '../../adapters/ui/components/ComicGroup/ComicGroup';
+import {
+    CharacterDetailsPageComicsContainer,
+    CharacterDetailsPageComicsContainerCentered,
+    CharacterDetailsPageComicsTitle,
+} from './Page.styles';
 
 function CharacterDetailsPage() {
     return (
@@ -11,7 +17,18 @@ function CharacterDetailsPage() {
                 photoSrc="/magneto.png"
             />
             <CharacterDetailsPageComicsContainer>
-                <CharacterDetailsPageComicsTitle>COMICS</CharacterDetailsPageComicsTitle>
+                <CharacterDetailsPageComicsContainerCentered>
+                    <CharacterDetailsPageComicsTitle>COMICS</CharacterDetailsPageComicsTitle>
+                    <ComicGroup>
+                        <Comic photoSrc="/comic.png" name="Who is...? Adam Warlock Infinity Comic #1" year="1967" />
+                        <Comic photoSrc="/comic.png" name="Who is...? Adam Warlock Infinity Comic #1" year="1967" />
+                        <Comic photoSrc="/comic.png" name="Who is...? Adam Warlock Infinity Comic #1" year="1967" />
+                        <Comic photoSrc="/comic.png" name="Who is...? Adam Warlock Infinity Comic #1" year="1967" />
+                        <Comic photoSrc="/comic.png" name="Who is...? Adam Warlock Infinity Comic #1" year="1967" />
+                        <Comic photoSrc="/comic.png" name="Who is...? Adam Warlock Infinity Comic #1" year="1967" />
+                        <Comic photoSrc="/comic.png" name="Who is...? Adam Warlock Infinity Comic #1" year="1967" />
+                    </ComicGroup>
+                </CharacterDetailsPageComicsContainerCentered>
             </CharacterDetailsPageComicsContainer>
         </>
     );
