@@ -6,7 +6,7 @@ interface ComicGroupProps {
     children: React.ReactNode;
 }
 
-function ComicGroup({ children }: ComicGroupProps) {
+export function ComicGroup({ children }: ComicGroupProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isDragging, setIsDragging] = useState<boolean>(false);
     const [startX, setStartX] = useState<number>(0);
@@ -22,7 +22,10 @@ function ComicGroup({ children }: ComicGroupProps) {
     };
 
     const disableDragging = () => {
-        setIsDragging(false);
+        if (containerRef.current) {
+            setIsDragging(false);
+            containerRef.current.style.cursor = 'grab';
+        }
     };
 
     const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -43,5 +46,3 @@ function ComicGroup({ children }: ComicGroupProps) {
         </ComicGroupWrapper>
     );
 }
-
-export default ComicGroup;

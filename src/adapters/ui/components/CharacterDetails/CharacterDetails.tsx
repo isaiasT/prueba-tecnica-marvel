@@ -1,3 +1,5 @@
+import { Character } from '../../../../domain/entities/Character';
+import { useFavoriteCharacters } from '../../../../infrastructure/contexts/FavoriteCharacters/FavoriteCharactersContext';
 import {
     CharacterDetailsContainer,
     CharacterDetailsContainerCentered,
@@ -13,18 +15,26 @@ import {
 } from './CharacterDetails.styles';
 
 interface CharacterDetailsProps {
-    name: string;
-    description: string;
-    isFavorite: boolean;
-    photoSrc: string;
+    character: Character;
 }
 
-function CharacterDetails({ name, description, isFavorite, photoSrc }: CharacterDetailsProps) {
+export function CharacterDetails({ character }: CharacterDetailsProps) {
+    const { addFavorite, removeFavorite, favorites } = useFavoriteCharacters();
+    const { id, name, description, thumbnail } = character;
+    const isFavorite = favorites.some((favorite) => favorite.id === id);
+
+    const handleFavoriteClick = (event: React.MouseEvent<HTMLDivElement>) => {
+        event.stopPropagation();
+        event.preventDefault();
+
+        isFavorite ? removeFavorite(id) : addFavorite(character);
+    };
+
     return (
         <CharacterDetailsContainer>
             <CharacterDetailsContainerCentered>
                 <CharacterDetailsPhotoWrapper>
-                    <CharacterDetailsPhoto src={photoSrc} alt={name} />
+                    <CharacterDetailsPhoto src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} />
                 </CharacterDetailsPhotoWrapper>
                 <CharacterDetailsWrapper>
                     <CharacterDetailsWrapper2>
@@ -33,6 +43,7 @@ function CharacterDetails({ name, description, isFavorite, photoSrc }: Character
                             <CharacterDetailsFavoriteIcon
                                 src={isFavorite ? '/heart-filled.svg' : '/heart-empty.svg'}
                                 alt="Favorite icon"
+                                onClick={handleFavoriteClick}
                             />
                         </CharacterDetailsNameContainer>
                         <CharacterDetailsDescription>{description}</CharacterDetailsDescription>
@@ -43,5 +54,3 @@ function CharacterDetails({ name, description, isFavorite, photoSrc }: Character
         </CharacterDetailsContainer>
     );
 }
-
-export default CharacterDetails;

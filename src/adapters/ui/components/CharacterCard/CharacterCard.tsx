@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import {
     CharacterCardBottomRightCut,
     CharacterCardContainer,
@@ -11,36 +9,37 @@ import {
     CharacterCardPhoto,
     CharacterCardPhotoWrapper,
 } from './CharacterCard.styles';
+import { useFavoriteCharacters } from '../../../../infrastructure/contexts/FavoriteCharacters/FavoriteCharactersContext';
+import { Character } from '../../../../domain/entities/Character';
 
 interface CharacterCardProps {
-    name: string;
-    isFavorite: boolean;
-    photoSrc: string;
+    character: Character;
 }
 
-function CharacterCard({ name, isFavorite, photoSrc }: CharacterCardProps) {
-    const [characterIsFavorite, setCharacterIsFavorite] = useState(isFavorite);
+export function CharacterCard({ character }: CharacterCardProps) {
+    const { addFavorite, removeFavorite, favorites } = useFavoriteCharacters();
+    const { id, name, thumbnail } = character;
+    const isFavorite = favorites.some((favorite) => favorite.id === id);
 
     const handleFavoriteClick = (event: React.MouseEvent<HTMLDivElement>) => {
         event.stopPropagation();
         event.preventDefault();
-        setCharacterIsFavorite(!characterIsFavorite);
+
+        isFavorite ? removeFavorite(id) : addFavorite(character);
     };
 
     return (
-        <CharacterCardContainer href="/1">
+        <CharacterCardContainer href={`/${id}`}>
             <CharacterCardPhotoWrapper>
-                <CharacterCardPhoto src={photoSrc} alt={name} />
+                <CharacterCardPhoto src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} />
             </CharacterCardPhotoWrapper>
             <CharacterCardInfo>
                 <CharacterCardInfoName>{name}</CharacterCardInfoName>
                 <CharacterCardInfoFavoriteWrapper onClick={handleFavoriteClick}>
-                    {characterIsFavorite ? <CharacterCardInfoFavorite /> : <CharacterCardInfoNotFavorite />}
+                    {isFavorite ? <CharacterCardInfoFavorite /> : <CharacterCardInfoNotFavorite />}
                 </CharacterCardInfoFavoriteWrapper>
             </CharacterCardInfo>
             <CharacterCardBottomRightCut />
         </CharacterCardContainer>
     );
 }
-
-export default CharacterCard;

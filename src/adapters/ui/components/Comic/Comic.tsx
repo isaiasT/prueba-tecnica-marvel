@@ -1,3 +1,4 @@
+import { Comic } from '../../../../domain/entities/Comic';
 import {
     ComicContainer,
     ComicInfoContainer,
@@ -8,23 +9,22 @@ import {
 } from './Comic.styles';
 
 interface ComicProps {
-    photoSrc: string;
-    name: string;
-    year: string;
+    comic: Comic;
 }
 
-function Comic({ photoSrc, name, year }: ComicProps) {
+export function ComicComponent({ comic }: ComicProps) {
+    const { thumbnail, title, dates } = comic;
+    const year = new Date(dates[0].date).getFullYear();
+
     return (
         <ComicContainer>
             <ComicPhotoWrapper>
-                <ComicPhoto src={photoSrc} alt={name} />
+                <ComicPhoto src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} />
             </ComicPhotoWrapper>
             <ComicInfoContainer>
-                <ComicName>{name}</ComicName>
+                <ComicName>{title}</ComicName>
                 <ComicYear>{year}</ComicYear>
             </ComicInfoContainer>
         </ComicContainer>
     );
 }
-
-export default Comic;

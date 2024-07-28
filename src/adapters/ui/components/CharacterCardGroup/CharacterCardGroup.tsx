@@ -4,8 +4,6 @@ interface CharacterCardGroupProps {
     children: React.ReactNode;
 }
 
-function CharacterCardGroup({ children }: CharacterCardGroupProps) {
+export function CharacterCardGroup({ children }: CharacterCardGroupProps) {
     return <CharacterCardGroupContainer>{children}</CharacterCardGroupContainer>;
 }
-
-export default CharacterCardGroup;

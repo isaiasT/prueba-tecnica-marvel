@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { device } from '../../styles/breakpoints';
+import { device } from '../../global-styles/breakpoints';
 
 export const CharacterDetailsContainer = styled.div`
     width: 100vw;
@@ -49,6 +49,10 @@ export const CharacterDetailsPhotoWrapper = styled.div`
     position: relative;
     overflow: hidden;
 
+    @media ${device.md} {
+        width: 278px;
+    }
+
     @media ${device.sm} {
         width: 100%;
         height: 398px;
@@ -68,6 +72,7 @@ export const CharacterDetailsWrapper = styled.div`
     display: flex;
     align-items: center;
     padding-left: 48px;
+    flex-grow: 1;
 
     @media ${device.md} {
         padding-right: 48px;
@@ -79,6 +84,7 @@ export const CharacterDetailsWrapper = styled.div`
 `;
 
 export const CharacterDetailsWrapper2 = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -107,6 +113,7 @@ export const CharacterDetailsName = styled.div`
 
 export const CharacterDetailsFavoriteIcon = styled.img`
     width: 24px;
+    cursor: pointer;
 `;
 
 export const CharacterDetailsDescription = styled.div`

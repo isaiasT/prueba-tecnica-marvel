@@ -7,7 +7,11 @@ import {
     SearchBarResults,
 } from './SearchBar.styles';
 
-function SearchBar() {
+interface SearchBarProps {
+    count: number;
+}
+
+export function SearchBar({ count }: SearchBarProps) {
     return (
         <SearchBarContainer>
             <SearchBarInputContainer>
@@ -16,9 +20,9 @@ function SearchBar() {
                     <SearchBarInputInput type="text" placeholder="SEARCH A CHARACTER..." />
                 </SearchBarInputContainer2>
             </SearchBarInputContainer>
-            <SearchBarResults>50 RESULTS</SearchBarResults>
+            <SearchBarResults>
+                {count} RESULT{count !== 1 ? 'S' : ''}
+            </SearchBarResults>
         </SearchBarContainer>
     );
 }
-
-export default SearchBar;

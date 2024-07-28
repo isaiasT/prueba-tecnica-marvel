@@ -1,3 +1,4 @@
+import { useFavoriteCharacters } from '../../../../infrastructure/contexts/FavoriteCharacters/FavoriteCharactersContext';
 import {
     NavigationContainer,
     NavigationFavorites,
@@ -6,7 +7,9 @@ import {
     NavigationLogoWrapper,
 } from './Navigation.styles';
 
-function Navigation() {
+export function Navigation() {
+    const { favorites } = useFavoriteCharacters();
+
     return (
         <NavigationContainer>
             <NavigationLogoWrapper href="/">
@@ -14,10 +17,8 @@ function Navigation() {
             </NavigationLogoWrapper>
             <NavigationFavorites href="/favorites">
                 <NavigationFavoritesIcon src="/heart-filled.svg" alt="Favorite characters list" />
-                <div>3</div>
+                <div>{favorites.length}</div>
             </NavigationFavorites>
         </NavigationContainer>
     );
 }
-
-export default Navigation;

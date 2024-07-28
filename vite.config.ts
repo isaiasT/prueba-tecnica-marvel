@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
 
     return {
         plugins: [react(), vike()],
-        vike: {
+        ssr: {
             noExternal: ['styled-components', '@emotion/*'],
         },
         build: {

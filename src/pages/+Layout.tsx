@@ -1,8 +1,10 @@
 import React from 'react';
 
-import Navigation from '../adapters/ui/components/Navigation/Navigation';
+import { Navigation } from '../adapters/ui/components/Navigation/Navigation';
+import { MainContainer } from '../adapters/ui/components/MainContainer/MainContainer';
+import { FavoriteCharactersProvider } from '../infrastructure/contexts/FavoriteCharacters/FavoriteCharactersContextProvider';
+
 import './Layout.css';
-import MainContainer from '../adapters/ui/components/MainContainer/MainContainer';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -11,8 +13,10 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
     return (
         <React.StrictMode>
-            <Navigation />
-            <MainContainer>{children}</MainContainer>
+            <FavoriteCharactersProvider>
+                <Navigation />
+                <MainContainer>{children}</MainContainer>
+            </FavoriteCharactersProvider>
         </React.StrictMode>
     );
 }
