@@ -6,7 +6,7 @@ import { CharacterCard } from '../../adapters/ui/components/CharacterCard/Charac
 import { CharacterCardGroup } from '../../adapters/ui/components/CharacterCardGroup/CharacterCardGroup';
 import { SearchBar } from '../../adapters/ui/components/SearchBar/SearchBar';
 import { getAllCharactersUsecase } from '../../application/usecases/getAllCharacters/getAllCharacters.usecase';
-import { createCharacterRepository } from '../../infrastructure/repositories/character.repository';
+import { createCharacterRepository } from '../../infrastructure/repositories/character/character.repository';
 import { CharactersPageContainer } from './Page.styles';
 import { Character } from '../../domain/entities/Character';
 import { CharacterRepositoryGetAllResponse } from '../../domain/ports/character.repository.port';

@@ -12,12 +12,12 @@ import {
 import { Character } from '../../domain/entities/Character';
 import { CharacterRepositoryGetByIdResponse } from '../../domain/ports/character.repository.port';
 import { createHttpClient, HttpClient } from '../../adapters/http/httpClient';
-import { createCharacterRepository } from '../../infrastructure/repositories/character.repository';
+import { createCharacterRepository } from '../../infrastructure/repositories/character/character.repository';
 import { getCharacterByIdUsecase } from '../../application/usecases/getCharacterById/getCharacterById.usecase';
 import { LoadingSpinner } from '../../adapters/ui/components/LoadingSpinner/LoadingSpinner';
 import { Comic } from '../../domain/entities/Comic';
-import { createComicRepository } from '../../infrastructure/repositories/comic.repository';
-import { getAllComicsByCharacterIdUsecase } from '../../application/usecases/getAllComicsByCharacterId/getAllComicsByCharacterId';
+import { createComicRepository } from '../../infrastructure/repositories/comic/comic.repository';
+import { getAllComicsByCharacterIdUsecase } from '../../application/usecases/getAllComicsByCharacterId/getAllComicsByCharacterId.usecase';
 import { ComicRepositoryGetAllByCharacterIdResponse } from '../../domain/ports/comic.repository.port';
 
 const httpClient: HttpClient = createHttpClient();

@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
     const isDevelopment = mode === 'development';
 
     return {
-        plugins: [react(), vike()],
+        plugins: [react(), vike({ prerender: { partial: true } })],
         ssr: {
             noExternal: ['styled-components', '@emotion/*'],
         },
@@ -27,6 +27,11 @@ export default defineConfig(({ mode }) => {
                           }),
                       ],
             },
+        },
+        test: {
+            globals: true,
+            environment: 'jsdom',
+            setupFiles: './src/setupTests.ts',
         },
     };
 });

@@ -35,7 +35,7 @@ export function CharacterCard({ character }: CharacterCardProps) {
             </CharacterCardPhotoWrapper>
             <CharacterCardInfo>
                 <CharacterCardInfoName>{name}</CharacterCardInfoName>
-                <CharacterCardInfoFavoriteWrapper onClick={handleFavoriteClick}>
+                <CharacterCardInfoFavoriteWrapper onClick={handleFavoriteClick} role="button">
                     {isFavorite ? <CharacterCardInfoFavorite /> : <CharacterCardInfoNotFavorite />}
                 </CharacterCardInfoFavoriteWrapper>
             </CharacterCardInfo>

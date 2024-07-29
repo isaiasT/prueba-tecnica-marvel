@@ -37,6 +37,7 @@ export function ComicGroup({ children }: ComicGroupProps) {
 
     return (
         <ComicGroupWrapper
+            data-testid="comic-group-wrapper"
             ref={containerRef}
             onMouseDown={handleMouseDown}
             onMouseLeave={disableDragging}
