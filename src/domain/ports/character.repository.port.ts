@@ -10,5 +10,6 @@ export interface CharacterRepositoryGetByIdResponse {
 
 export interface CharacterRepository {
     getAll(): Promise<CharacterRepositoryGetAllResponse>;
+    getAllFilteredByName(name: string): Promise<CharacterRepositoryGetAllResponse>;
     getCharacterById(id: number): Promise<CharacterRepositoryGetByIdResponse>;
 }

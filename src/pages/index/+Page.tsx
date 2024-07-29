@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import _ from 'lodash';
 
 import { createHttpClient, HttpClient } from '../../adapters/http/httpClient';
 import { CharacterCard } from '../../adapters/ui/components/CharacterCard/CharacterCard';
@@ -10,10 +11,12 @@ import { CharactersPageContainer } from './Page.styles';
 import { Character } from '../../domain/entities/Character';
 import { CharacterRepositoryGetAllResponse } from '../../domain/ports/character.repository.port';
 import { LoadingSpinner } from '../../adapters/ui/components/LoadingSpinner/LoadingSpinner';
+import { getAllCharactersFilteredByNameUsecase } from '../../application/usecases/getAllCharactersFilteredByName/getAllCharactersFilteredByName.usecase';
 
 const httpClient: HttpClient = createHttpClient();
 const characterRepository = createCharacterRepository(httpClient);
 const getAllCharacters = getAllCharactersUsecase(characterRepository);
+const getAllCharactersFilteredByName = getAllCharactersFilteredByNameUsecase(characterRepository);
 
 function CharactersPage() {
     const [characters, setCharacters] = useState<Character[]>([]);
@@ -21,27 +24,43 @@ function CharactersPage() {
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            try {
-                const result: CharacterRepositoryGetAllResponse = await getAllCharacters();
+    const fetchData = async (filter: string) => {
+        setCharacters([]);
+        setCount(0);
+        setIsLoading(true);
 
-                setCharacters(result.data.results);
-                setCount(result.data.count);
-                setIsLoading(false);
-            } catch (err) {
-                setError('Error getting characters');
+        try {
+            let result: CharacterRepositoryGetAllResponse;
+
+            if (filter === '') {
+                result = await getAllCharacters();
+            } else {
+                result = await getAllCharactersFilteredByName(filter);
             }
-        };
 
-        void fetchData();
+            setCharacters(result.data.results);
+            setCount(result.data.count);
+        } catch (err) {
+            setError('Error getting characters');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        void fetchData('');
     }, []);
+
+    const debouncedHandleInput = _.debounce((inputValue: string) => {
+        void fetchData(inputValue);
+    }, 300);
+
+    const debouncedHandleInputRef = useRef(debouncedHandleInput);
 
     return (
         <CharactersPageContainer>
             {error && <div>{error}</div>}
-            <SearchBar count={count} />
+            <SearchBar count={count} handleInput={debouncedHandleInputRef.current} />
             <CharacterCardGroup>
                 {isLoading && <LoadingSpinner />}
                 {characters.map((character) => (

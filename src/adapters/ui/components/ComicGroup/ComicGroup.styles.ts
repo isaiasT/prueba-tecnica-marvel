@@ -4,7 +4,7 @@ import { device } from '../../global-styles/breakpoints';
 
 export const ComicGroupWrapper = styled.div`
     width: 100%;
-    height: 369px;
+    min-height: 369px;
     overflow-x: auto;
     position: relative;
     cursor: grab;

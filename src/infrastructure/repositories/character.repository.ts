@@ -5,11 +5,15 @@ import {
     CharacterRepositoryGetByIdResponse,
 } from '../../domain/ports/character.repository.port';
 
-const LIMIT = 50;
+const LIMIT = 2;
 
 export const createCharacterRepository = (httpClient: HttpClient): CharacterRepository => {
     const getAll = async (): Promise<CharacterRepositoryGetAllResponse> => {
         return httpClient.get<CharacterRepositoryGetAllResponse>('/characters', { limit: LIMIT });
+    };
+
+    const getAllFilteredByName = async (name: string): Promise<CharacterRepositoryGetAllResponse> => {
+        return httpClient.get<CharacterRepositoryGetAllResponse>('/characters', { limit: LIMIT, nameStartsWith: name });
     };
 
     const getCharacterById = async (id: number): Promise<CharacterRepositoryGetByIdResponse> => {
@@ -18,6 +22,7 @@ export const createCharacterRepository = (httpClient: HttpClient): CharacterRepo
 
     return {
         getAll,
+        getAllFilteredByName,
         getCharacterById,
     };
 };
