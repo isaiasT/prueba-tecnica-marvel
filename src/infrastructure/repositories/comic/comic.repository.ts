@@ -4,7 +4,7 @@ import {
     ComicRepositoryGetAllByCharacterIdResponse,
 } from '../../../domain/ports/comic.repository.port';
 
-const LIMIT = 2;
+const LIMIT = 20;
 
 export const createComicRepository = (httpClient: HttpClient): ComicRepository => {
     const getAllByCharacterId = async (id: number): Promise<ComicRepositoryGetAllByCharacterIdResponse> => {

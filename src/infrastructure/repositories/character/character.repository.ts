@@ -5,7 +5,7 @@ import {
     CharacterRepositoryGetByIdResponse,
 } from '../../../domain/ports/character.repository.port';
 
-const LIMIT = 2;
+const LIMIT = 50;
 
 export const createCharacterRepository = (httpClient: HttpClient): CharacterRepository => {
     const getAll = async (): Promise<CharacterRepositoryGetAllResponse> => {
