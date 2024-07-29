@@ -34,7 +34,10 @@ export function CharacterDetails({ character }: CharacterDetailsProps) {
         <CharacterDetailsContainer>
             <CharacterDetailsContainerCentered>
                 <CharacterDetailsPhotoWrapper>
-                    <CharacterDetailsPhoto src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} />
+                    <CharacterDetailsPhoto
+                        src={`${thumbnail.path.replace('http:', 'https:')}.${thumbnail.extension}`}
+                        alt={name}
+                    />
                 </CharacterDetailsPhotoWrapper>
                 <CharacterDetailsWrapper>
                     <CharacterDetailsWrapper2>

@@ -19,7 +19,7 @@ export function ComicComponent({ comic }: ComicProps) {
     return (
         <ComicContainer>
             <ComicPhotoWrapper>
-                <ComicPhoto src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} />
+                <ComicPhoto src={`${thumbnail.path.replace('http:', 'https:')}.${thumbnail.extension}`} alt={title} />
             </ComicPhotoWrapper>
             <ComicInfoContainer>
                 <ComicName>{title}</ComicName>

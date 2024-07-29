@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
-const BASE_URL = 'http://gateway.marvel.com/v1/public';
+const BASE_URL = 'https://gateway.marvel.com/v1/public';
 const PUBLIC_API_KEY = 'd944f98212672822a0172659f65fdf70';
 
 export interface HttpClient {

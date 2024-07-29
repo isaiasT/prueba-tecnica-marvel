@@ -31,7 +31,10 @@ export function CharacterCard({ character }: CharacterCardProps) {
     return (
         <CharacterCardContainer href={`/${id}`}>
             <CharacterCardPhotoWrapper>
-                <CharacterCardPhoto src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} />
+                <CharacterCardPhoto
+                    src={`${thumbnail.path.replace('http:', 'https:')}.${thumbnail.extension}`}
+                    alt={name}
+                />
             </CharacterCardPhotoWrapper>
             <CharacterCardInfo>
                 <CharacterCardInfoName>{name}</CharacterCardInfoName>
