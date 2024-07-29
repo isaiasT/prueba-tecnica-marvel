@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# Web Challenge Marvel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Prueba técnica para obtener diferentes datos desde la api pública de Marvel. Se compone de:
 
-Currently, two official plugins are available:
+-   Una página para obtener los 50 primeros personajes y buscar otros mediante el nombre.
+-   Otra destinada a ofrecer mas detalles sobre un personaje en concreto y mostrar información de hasta 20 de sus cómics.
+-   Una última en la que poder ver y buscar entre los personajes seleccionados como favoritos.
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Como probar el proyecto en local
 
-## Expanding the ESLint configuration
+-   `npm i`
+-   `npm run dev`
+-   Acceder a http://localhost:3000
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Adicionalmente el proyecto se encuentra desplegado y se puede probar aquí: https://isaiasT.github.io
 
--   Configure the top-level `parserOptions` property like this:
+## Arquitectura y estructura
 
-```js
-export default {
-    // other rules...
-    parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: __dirname,
-    },
-};
-```
+TODO
 
--   Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
--   Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
--   Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Tecnologías utilizadas
+
+TODO

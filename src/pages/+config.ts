@@ -14,7 +14,7 @@ const config: ConfigType = {
     Head,
     favicon: '/favicon.ico',
     title: 'Web Challenge Marvel',
-    ssr: false, // Change to true if you want to enable SSR
+    ssr: true,
     extends: [vikeReact],
 };
 

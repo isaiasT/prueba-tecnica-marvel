@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
     const isDevelopment = mode === 'development';
 
     return {
-        plugins: [react(), vike({ prerender: { partial: true } })],
+        plugins: [react(), vike()],
         ssr: {
             noExternal: ['styled-components', '@emotion/*'],
         },
