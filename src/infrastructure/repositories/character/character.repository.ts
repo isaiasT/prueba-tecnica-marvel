@@ -1,9 +1,9 @@
-import { HttpClient } from '../../adapters/http/httpClient';
+import { HttpClient } from '../../../adapters/http/httpClient';
 import {
     CharacterRepository,
     CharacterRepositoryGetAllResponse,
     CharacterRepositoryGetByIdResponse,
-} from '../../domain/ports/character.repository.port';
+} from '../../../domain/ports/character.repository.port';
 
 const LIMIT = 2;
 
